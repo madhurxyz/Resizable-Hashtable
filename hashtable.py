@@ -50,9 +50,7 @@ class HashTable(object):
 
     def resize(self):
         old_buckets = self.buckets
-
-        for i in range(len(self.buckets)*2):
-            self.buckets = LinkedList()
+        self.buckets = [LinkedList() for i in range(len(self.buckets)*2)]
 
         for bucket in self.buckets:
             for item in bucket:
