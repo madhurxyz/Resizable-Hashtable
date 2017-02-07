@@ -48,6 +48,9 @@ class HashTable(object):
                 return b.data[1]
         raise KeyError('Key is not present in the HashTable')
 
+    def resize(self):
+        old_buckets = self.buckets
+        double_size = self.buckets * 2
     #Best Case is Omega(1)
     #Worst Case is O(n)
     def set(self, key, value):
